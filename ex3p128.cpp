@@ -36,7 +36,6 @@ int main() {
 
     // Getting input from user
     cout << "Introduzca un valor para el dia y el mes: ";
-    // Pending to solve issue with character input statement
     cin >> day >> month;
 
     // Processing input with prepared data
@@ -45,7 +44,8 @@ int main() {
             for (int d=0; d<30; i++) {
                 if (day == d+1) {
                     // Pending to produce a sorting algorithm for the months prior to the one selected, to compute the day in the year
-                    cout << "El dia " << day << " del " << i+1 << " es el " << 365 - (months[i-1][30] + months[i][d]);
+                    cout << "El dia " << day << " del " << month << " es el ";
+                    cout << 365 - (months[i-1][30] + months[i][d]);
                     checkDay = 1;
                 }
             }
@@ -53,6 +53,7 @@ int main() {
         }
     }
 
+    // Error handling
     if (checkMonth != 1 && checkDay != 1) {
         cout << "Los valores introducidos no son correctos.";
     } else {
