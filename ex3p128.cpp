@@ -14,6 +14,9 @@ int main() {
                     months[i][d] = d+1;
                     total += 1;
                 }
+                months[i][28] = 0;
+                months[i][29] = 0;
+                months[i][30] = 0;
                 break;
             case 3:
                 case 5:
@@ -23,6 +26,7 @@ int main() {
                                 months[i][d] = d+1;
                                 total += 1;
                             }
+                            months[i][30] = 0;
                             break;
             default:
                 for (int d=0; d<31; d++) {
