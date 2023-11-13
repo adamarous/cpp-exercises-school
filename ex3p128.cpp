@@ -36,8 +36,7 @@ int main() {
 
     // Getting input from user
     cout << "Introduzca un valor para el dia y un valor para el mes: " << endl;
-    cin >> day;
-    cin >> month;
+    cin >> day >> month; // Segmentation error; when run, input never ends
 
     // Processing input with prepared data
     total = 0;
