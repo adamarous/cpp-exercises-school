@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int months[12][32], total, day, month, checkMonth, checkDay, janCheck;
+    int months[12][32], total = 0, day = 0, month = 0, checkMonth = 0, checkDay = 0, janCheck = 0;
 
     // Preparing month data; up to 30 filled with days, 1 or 3 empty spaces for non-31 months, and the 31st place with the total days
     for (int i=0; i<12; i++) {
