@@ -43,7 +43,7 @@ int main() {
     for (int i=0; i<12; i++) {
         if (month == i+1) {
             for (int d=0; d<30; i++) {
-                if (day == day+1) {
+                if (day == d+1) {
                     // Pending to produce a sorting algorithm for the months prior to the one selected, to compute the day in the year
                     cout << "El dia " << day << " del " << i+1 << " es el " << 365 - (months[i-1][30] + months[i][d]);
                     checkDay = 1;
