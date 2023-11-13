@@ -36,6 +36,7 @@ int main() {
 
     // Getting input from user
     cout << "Introduzca un valor para el dia y el mes: ";
+    // Pending to solve issue with character input statement
     cin >> day >> month;
 
     // Processing input with prepared data
