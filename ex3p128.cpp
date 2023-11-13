@@ -36,7 +36,8 @@ int main() {
 
     // Getting input from user
     cout << "Introduzca un valor para el dia y un valor para el mes: " << endl;
-    cin >> day >> month;
+    cin >> day;
+    cin >> month;
 
     // Processing input with prepared data
     total = 0;
