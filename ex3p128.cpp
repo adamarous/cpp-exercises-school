@@ -39,13 +39,20 @@ int main() {
     cin >> day >> month;
 
     // Processing input with prepared data
+    total = 0;
     for (int i=0; i<12; i++) {
         if (month == i+1) {
             for (int d=0; d<30; i++) {
                 if (day == d+1) {
-                    // Pending to produce a sorting algorithm for the months prior to the one selected, to compute the day in the year
                     cout << "El dia " << day << " del " << month << " es el ";
-                    cout << 365 - (months[i-1][30] + months[i][d]);
+                    for (int m=0; m<12; m++) {
+                        if (m < i) {
+                            total += months[m][31] + months[i][d];
+                        } else {
+                            total = months[i][d];
+                        }
+                    }
+                    cout << total << " del año.";
                     checkDay = 1;
                 }
             }
