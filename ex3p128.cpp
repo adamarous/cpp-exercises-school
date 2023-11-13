@@ -36,13 +36,13 @@ int main() {
 
     // Getting input from user
     cout << "Introduzca un valor para el dia y un valor para el mes: " << endl;
-    cin >> day >> month; // Segmentation error; when run, input never ends
+    cin >> day >> month;
 
     // Processing input with prepared data
     total = 0;
     for (int i=0; i<12; i++) {
         if (month == i+1) {
-            for (int d=0; d<30; i++) {
+            for (int d=0; d<30; d++) {
                 if (day == d+1) {
                     cout << "El dia " << day << " del mes " << month << " es el dia ";
                     for (int m=0; m<12; m++) {
