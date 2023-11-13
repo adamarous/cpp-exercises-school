@@ -3,9 +3,9 @@
 using namespace std;
 
 int main() {
-    int months[12][32], total, day, month, checkMonth, checkDay;
+    int months[12][32], total, day, month, checkMonth, checkDay, janCheck;
 
-    // Preparing month data; up to 30 filled with days, 1 to 2 empty spaces for non-31 days, and the 31st place with the total days
+    // Preparing month data; up to 30 filled with days, 1 or 3 empty spaces for non-31 months, and the 31st place with the total days
     for (int i=0; i<12; i++) {
         total = 0;
         switch (i) {
@@ -35,7 +35,7 @@ int main() {
     }
 
     // Getting input from user
-    cout << "Introduzca un valor para el dia y el mes: ";
+    cout << "Introduzca un valor para el dia y el mes: " << endl;
     cin >> day >> month;
 
     // Processing input with prepared data
@@ -44,15 +44,21 @@ int main() {
         if (month == i+1) {
             for (int d=0; d<30; i++) {
                 if (day == d+1) {
-                    cout << "El dia " << day << " del " << month << " es el ";
+                    cout << "El dia " << day << " del mes " << month << " es el dia ";
                     for (int m=0; m<12; m++) {
                         if (m < i) {
-                            total += months[m][31] + months[i][d];
+                            total += months[m][31];
+                            janCheck = 0;
                         } else {
                             total = months[i][d];
+                            janCheck = 1;
                         }
                     }
-                    cout << total << " del año.";
+                    if (janCheck == 0) {
+                        cout << total + months[i][d] << " del año.";
+                    } else {
+                        cout << total << " del año.";
+                    }
                     checkDay = 1;
                 }
             }
