@@ -33,19 +33,60 @@ int main() {
 
     // Getting input from user
     std::cout << "Introduzca un valor para el dia y un valor para el mes: " << std::endl;
-    std::cin >> day >> month;
+    std::cout << "Dia >> ";
+    std::cin >> day;
+    std::cout << "Mes >> ";
+    std::cin >> month;
 
     // Processing input with prepared data
     total = 0;
     for (int i=0; i<12; i++) {
         if (month == i+1) {
-            for (int d=0; d<30; d++) {
+            for (int d=0; d<31; d++) {
                 if (day == d+1) {
-                    std::cout << "El dia " << day << " del mes " << month << " es el dia ";
+                    std::cout << "El dia " << day << " de ";
+                    switch (i) {
+                        case 0:
+                            std::cout << "enero";
+                            break;
+                        case 1:
+                            std::cout << "febrero";
+                            break;
+                        case 2:
+                            std::cout << "marzo";
+                            break;
+                        case 3:
+                            std::cout << "abril";
+                            break;
+                        case 4:
+                            std::cout << "mayo";
+                            break;
+                        case 5:
+                            std::cout << "junio";
+                            break;
+                        case 6:
+                            std::cout << "julio";
+                            break;
+                        case 7:
+                            std::cout << "agosto";
+                            break;
+                        case 8:
+                            std::cout << "septiembre";
+                            break;
+                        case 9:
+                            std::cout << "octubre";
+                            break;
+                        case 10:
+                            std::cout << "noviembre";
+                            break;
+                        case 11:
+                            std::cout << "diciembre";
+                            break;
+                    }
+                    std::cout << " es el dia ";
                     for (int m=0; m<12; m++) {
                         if (m < i) {
                             total += months[m][31];
-                            janCheck = 0;
                         } else {
                             if (i == 0) {
                                 total = months[i][d];
