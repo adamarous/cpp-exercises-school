@@ -4,17 +4,19 @@ using namespace std;
 
 int main() {
 	int passwd = 7890;
-	int intento;
+	int intento = 0;
 
 	while (intento != passwd) {
 		cout << "Introduzca su contrasena: ";
 		cin >> intento;
 		if (intento != passwd) {
 			cout << "Se ha introducido la contrasena incorrecta." << endl;
+			continue;
+		} else {
+			cout << "Se ha introducido la contrasena correcta.";
+			break;
 		}
 	}
-
-	cout << "Se ha introducido la contrasena correcta.";
 
 	return 0;
 }

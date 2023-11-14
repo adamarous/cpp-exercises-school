@@ -1,9 +1,7 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    int vectors[2][3], vectorsSubs[1][3] = {0, 0, 0};
+    int vectors[2][3];
 
     // Asking for input
     for (int i=0; i<2; i++) {
@@ -34,20 +32,8 @@ int main() {
         }
     }
 
-    // Computing
-    for (int i=0; i<3; i++) {
-        vectorsSubs[0][i] = vectors[0][i] - vectors[1][i];
-    }
+    // Dot product logic (gotta multiply each component with the one for the other vector and sum the result of each)
 
-    // Outputting results
-    cout << "La diferencia entre los vectores introducidos es ";
-    for (int i=0; i<3; i++) {
-        if (i == 0 || i == 1) {
-            cout << vectorsSubs[0][i] << ", ";
-        } else {
-            cout << vectorsSubs[0][i];
-        }
-    }
 
     return 0;
 }
