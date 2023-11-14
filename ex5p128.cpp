@@ -35,7 +35,7 @@ int main() {
     }
 
     // Computing
-    for (int d=0; d<3; d++)
+    for (int i=0; i<3; i++)
         vectorsSubs[0][d] = vectors[0][d] - vectors[1][d];
     }
 
