@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
     int vectors[2][3], vectorsSubs[1][3] = {0, 0, 0};
 
