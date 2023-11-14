@@ -36,7 +36,7 @@ int main() {
 
     // Computing
     for (int i=0; i<3; i++)
-        vectorsSubs[0][d] = vectors[0][d] - vectors[1][d];
+        vectorsSubs[0][i] = vectors[0][i] - vectors[1][i];
     }
 
     // Outputting results
