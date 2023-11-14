@@ -1,12 +1,14 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    int vectors[2][3];
+    int vectors[2][3], scalarProduct = 0;
 
     // Asking for input
     for (int i=0; i<2; i++) {
         for (int d=0; d<3; d++) {
-            cout << "Introduzca el valor ";
+            cout << "Introduzca la componente ";
             switch (d) {
                 case 0:
                     cout << "x";
@@ -32,8 +34,11 @@ int main() {
         }
     }
 
-    // Dot product logic (gotta multiply each component with the one for the other vector and sum the result of each)
-
+    // Dot product logic
+    for (int i=0; i<3; i++) {
+        scalarProduct += vectors[0][i] * vectors[1][i];
+    }
+    cout << "El producto escalar de los vectores introducidos es " << scalarProduct << ".";
 
     return 0;
 }
