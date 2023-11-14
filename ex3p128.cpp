@@ -60,8 +60,10 @@ int main() {
                     }
                     if (janCheck == 0) {
                         cout << total + months[i][d] << " del año.";
+                        break;
                     } else {
                         cout << total << " del año.";
+                        break;
                     }
                     checkDay = 1;
                 }
