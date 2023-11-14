@@ -35,12 +35,19 @@ int main() {
     }
 
     // Computing
-    for (int i=0; i<3; i++)
+    for (int i=0; i<3; i++) {
         vectorsSubs[0][i] = vectors[0][i] - vectors[1][i];
     }
 
     // Outputting results
-    cout << "La diferencia entre los vectores introducidos es " << vectorsSubs;
+    cout << "La diferencia entre los vectores introducidos es ";
+    for (int i=0; i<3; i++) {
+        if (i == 0 || i == 1) {
+            cout << vectorsSubs[0][i] << ", ";
+        } else {
+            cout << vectorsSubs[0][i];
+        }
+    }
 
     return 0;
 }
