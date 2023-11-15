@@ -29,9 +29,9 @@ int main() {
 	}
 
 	if (eval == 1) {
-		cout << "Adivinaste el numero despues de " << intento << " intento(s).";
+		cout << "Ha adivinado el numero despues de " << intento << " intento(s).";
 	} else {
-		cout << "No adivinaste el numero. Era " << num << ".";
+		cout << "No ha adivinado el numero. Era " << num << ".";
 	}
 
 	return 0;
