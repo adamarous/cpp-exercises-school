@@ -14,7 +14,7 @@ int main() {
                 case 1:
                     std::cout << "la segunda columna";
                     break;
-                case 3:
+                case 2:
                     std::cout << "la tercera columna";
                     break;
             }
@@ -26,7 +26,7 @@ int main() {
                 case 1:
                     std::cout << "la segunda fila: ";
                     break;
-                case 3:
+                case 2:
                     std::cout << "la tercera fila: ";
                     break;
             }
@@ -36,11 +36,26 @@ int main() {
 
     // Computing the determinant
     for (int r=0; r<3; r++) {
-        matrixMinor[r][0] = matrix[]
-        // for (int c=0; c<3; c++) {
-        //     matrixMinor[r][c] = matrix[r+1][c+1];
-        // }
-        // matrixDet = matrix[r][0] * matrix[r+1][1];
+        for (int r_=0; r_<2; r_++) {
+            for (int c_=0; c_<2; c_++) {
+                switch (r) {
+                    // Cases 0 and 1 can be made to follow a general form
+                    case 0:
+                        matrixMinor[r_][c_] = matrix[r_+1][c_+1];
+                        break;
+                    case 1:
+                        matrixMinor[r_][c_] = matrix[(r+r_)*r_][c_+r];
+                        break;
+                    case 2:
+                        matrixMinor[r_][c_] = matrix[(r+r_)*r_][c_+r]; /* [f(2, 0, 0) = 0][...] binary equivalent 000 = 0
+                                                                          [f(2, 0, 1) = 0][...] binary equivalent 001 = 1
+                                                                          f[(2, 1, 0) = 1][...] binary equivalent 010 = 2
+                                                                          f[(2, 1, 1) = 1][...] binary equivalent 011 = 3
+                                                                        */ 
+                        break;
+                }
+            }
+        }
     }
 
     return 0;
