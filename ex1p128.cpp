@@ -6,7 +6,7 @@ int main() {
     float n[4], counter = 0.0, average;
 
     // Asking for input
-    cout << "Introduzca 4 numeros: ";
+    cout << "Introduzca 4 numeros: " << endl;
     for (int i=0; i<4; i++) {
         cin >> n[i];
     }
@@ -20,17 +20,19 @@ int main() {
     // Outputting results
     cout << "Los datos introducidos, ";
     for (int i=0; i<4; i++) {
-        if (i == 2) {
-            cout << n[i] << " y ";
-        } else {
-            if (i == 3) {
-                cout << n[i] << " ";
-            } else {
+        switch (i) {
+            case 2:
+                cout << n[i] << " y ";
+                break;
+            case 3:
+                cout << n[i];
+                break;
+            default:
                 cout << n[i] << ", ";
-            }
+                break;
         }
     }
-    cout << "tienen media aritmetica " << average << ".";
+    cout << ", tienen media aritmetica " << average << ".";
 
     return 0;
 }
