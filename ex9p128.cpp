@@ -47,11 +47,7 @@ int main() {
                         matrixMinor[r_][c_] = matrix[(r+r_)*r_][c_+r];
                         break;
                     case 2:
-                        matrixMinor[r_][c_] = matrix[(r+r_)*r_][c_+r]; /* [f(2, 0, 0) = 0][...] binary equivalent 000 = 0
-                                                                          [f(2, 0, 1) = 0][...] binary equivalent 001 = 1
-                                                                          f[(2, 1, 0) = 1][...] binary equivalent 010 = 2
-                                                                          f[(2, 1, 1) = 1][...] binary equivalent 011 = 3
-                                                                        */ 
+                        matrixMinor[r_][c_] = matrix[r_][c_+1];
                         break;
                 }
             }
