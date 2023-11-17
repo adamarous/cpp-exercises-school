@@ -1,7 +1,8 @@
 #include <iostream>
+#include <cmath>
 
 int main() {
-    int matrix[3][3], matrixDet, matrixMinor[2][2];
+    int matrix[3][3], matrixDet = 0, matrixMinor[2][2];
 
     // Asking for input
     for (int r=0; r<3; r++) {
@@ -38,16 +39,16 @@ int main() {
     for (int r=0; r<3; r++) {
         for (int r_=0; r_<2; r_++) {
             for (int c_=0; c_<2; c_++) {
-                switch (r) {
-                    // Cases 0 and 1 can be made to follow a general form
-                    case 0:
-                        case 1:
-                            matrixMinor[r_][c_] = matrix[pow(r_, r+1)+pow(r*r_, r)][c_+pow(r, r)];
-                            break;
-                    case 2:
-                        matrixMinor[r_][c_] = matrix[r_][c_+1];
-                        break;
+                if (r == 2) {
+                    matrixMinor[r_][c_] = matrix[r_][c_+1];
+                } else {
+                    matrixMinor[r_][c_] = matrix[static_cast<int>(pow(r_, r+1)+pow(r*r_, r))][static_cast<int>(c_+pow(r, r))];
                 }
+           }
+        }
+        for (int r_=0; r_<2; r_++) {
+            for (int c_=0; c_<2; c_++) {
+                matrixDet += matrixMinor[r_][c_] * matrixMinor[r_+1][c_+1];
             }
         }
     }
