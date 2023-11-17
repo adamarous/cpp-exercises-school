@@ -41,11 +41,9 @@ int main() {
                 switch (r) {
                     // Cases 0 and 1 can be made to follow a general form
                     case 0:
-                        matrixMinor[r_][c_] = matrix[r_+1][c_+1];
-                        break;
-                    case 1:
-                        matrixMinor[r_][c_] = matrix[(r+r_)*r_][c_+r];
-                        break;
+                        case 1:
+                            matrixMinor[r_][c_] = matrix[pow(r_, r+1)+pow(r*r_, r)][c_+pow(r, r)];
+                            break;
                     case 2:
                         matrixMinor[r_][c_] = matrix[r_][c_+1];
                         break;
