@@ -12,17 +12,15 @@ int main() {
     }
     
     // Sorting through the array to find the greatest number
+    greatest = n[0];
     for (int i=0; i<10; i++) {
-        for (int d=0; d<10; d++) {
-            if (n[i] > n[d]) {
-                greatest = n[i];
-                break;
-            }
+        if (n[i] > greatest) {
+            greatest = n[i];
         }
     }
 
     // Outputting results
-    cout << "El numero mas grande es " << greatest;
+    cout << "El numero mas grande es " << greatest << ".";
 
     return 0;
 }
