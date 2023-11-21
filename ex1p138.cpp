@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    int num, n[1000];
+    int num;
 
     // Asking for input
     std::cout << "Dime un numero: ";
@@ -9,10 +9,9 @@ int main() {
 
     // Computing and outputting results
     std::cout << "Sus divisores son: ";
-    for (int i=1; i<=num; i++) {
+    for (int i=num; i>=1; i--) {
         if (num % i == 0) {
-            n[i] = num / i;
-            std::cout << n[i] << " ";
+            std::cout << num/i << " ";
         }
     }
 
