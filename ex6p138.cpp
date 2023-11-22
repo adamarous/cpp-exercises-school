@@ -64,8 +64,8 @@ int main() {
                     } else {
                         std::cout << "Introduzca mas de un dato." << std::endl;
                     }
-                    std::cout << std::endl;
                 }
+                std::cout << std::endl;
                 break;
             case 0:
                 exit = 1;
