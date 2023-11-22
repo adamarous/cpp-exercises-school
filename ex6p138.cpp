@@ -33,12 +33,12 @@ int main() {
                 if (indexer != 0) {
                     for (int i=0; i<indexer; i++) {
                         if (i == 0) {
-                            std::cout << n[i] << ", "; // pending to fix errror with subarray types
+                            std::cout << num[i] << ", ";
                         } else {
                             if (i == indexer-1) {
-                                std::cout << n[i] << "." << std::endl;
+                                std::cout << num[i] << "." << std::endl;
                             } else {
-                                std::cout << n[i] << " ";
+                                std::cout << num[i] << " ";
                             }
                         }
                     }
@@ -50,7 +50,7 @@ int main() {
             case 3:
                 if (indexer != 0) {
                     for (int i=0; i<indexer; i++) {
-                        average += n[i];
+                        average += num[i];
                     }
                     average /= indexer;
                     std::cout << "La media artimetica es " << average << "." << std::endl;
