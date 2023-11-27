@@ -9,9 +9,7 @@ int main() {
 
     while (!file.eof()) {
         getline(file, line);
-        if (!file.eof()) {
-            sum += std::stoi(line);
-        }
+        sum += std::stoi(line);
     }
     file.close();
 
