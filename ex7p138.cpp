@@ -15,13 +15,14 @@ int main() {
     // Asking for filename and adding current numbers if file exists
     std::cout << std::endl << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
     std::getline(std::cin, filename);
-    std::ifstream file(filename.c_str());
+    std::ifstream file(filename);
     if (!file.fail()) {
         while (!file.eof()) {
             std::getline(file, line);
-            if (!file.eof()) {
-                num[indexer] = std::stod(line);
-            }
+            num[indexer] = std::stod(line);
+            // if (!file.eof()) {
+            //     num[indexer] = std::stod(line);
+            // }
             indexer++;
         }
         file.close();
