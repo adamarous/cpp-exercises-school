@@ -34,15 +34,15 @@ int main() {
         std::cout << std::endl;
         switch (option) {
             case 1: // Pending work for existing file inputs
-                if (indexer <= 1000) {
+                if (indexer < 1000) {
                     if (newFileOption != 1) {
                         while (!newFile.eof()) {
                             getline(newFile, line);
                             if (!newFile.eof()) {
                                 num[indexer] = std::stoi(line);
                             }
+                            indexer++;
                         }
-                        indexer++;
                         newFile.close();
                     }
                     std::cout << "Introduzca un dato real de doble precision: ";
