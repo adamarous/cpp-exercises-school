@@ -60,15 +60,6 @@ int main() {
                         } else {
                             std::cout << num[i] << ", ";
                         }
-                        // if (i == 0 && indexer > 1) {
-                        //     std::cout << num[i] << ", ";
-                        // } else {
-                        //     if (i == indexer-1) {
-                        //         std::cout << num[i] << "." << std::endl;
-                        //     } else {
-                        //         std::cout << num[i] << " ";
-                        //     }
-                        // }
                     }
                     std::cout << std::endl;
                 } else {
