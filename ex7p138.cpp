@@ -8,9 +8,9 @@ int main() {
     std::string filename, line;
 
     // Populating the array with 0s to avoid memory errors
-    for (int i=0; i<1000; i++) {
-        num[i] = 0;
-    }
+    // for (int i=0; i<1000; i++) {
+    //     num[i] = 0;
+    // }
 
     // Asking for filename and adding current numbers if file exists
     std::cout << std::endl << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
