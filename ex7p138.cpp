@@ -4,11 +4,10 @@
 
 int main() {
     double num[1000], n, average = 0.0;
-    int indexer = 0, exit = 0, option, newFileOption = 0, originalFileContents = 0;
-    std::ofstream newFile("numeros.txt");
+    int indexer = 0, quit = 0, option;
     std::string filename, line;
 
-    // Populating the array with 0 to avoid memory errors
+    // Populating the array with 0s to avoid memory errors
     for (int i=0; i<1000; i++) {
         num[i] = 0;
     }
@@ -16,7 +15,8 @@ int main() {
     // Asking for filename and adding current numbers if file exists
     std::cout << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
     std::getline(std::cin, filename);
-    std::ifstream file(filename.c_str);
+    std::ofstream newFile(filename);
+    std::ifstream file(filename.c_str());
     if (!file.fail()) {
         while (!file.eof()) {
             std::getline(file, line);
@@ -24,15 +24,12 @@ int main() {
                 num[indexer] = std::stoi(line);
             }
             indexer++;
-            originalFileContents++;
         }
         file.close();
-    } else {
-    	newFileOption = 1;
-	}
+    }
 
     // Menu
-    while (exit != 1) {
+    while (quit != 1) {
         std::cout << "1. Anadir un dato" << std::endl;
         std::cout << "2. Ver todos los datos" << std::endl;
         std::cout << "3. Mostrar media aritmetica" << std::endl;
@@ -89,24 +86,11 @@ int main() {
                 std::cout << std::endl;
                 break;
             case 0:
-				if (newFileOption == 0) {
-                	while (!file.eof()) {
-                		std::getline(file, line);
-					}
-					if (originalFileContents != indexer) {
-						for (int i=(originalFileContents-1); i<indexer; i++) {
-	                    	file << std::to_string(num[i]) << std::endl;
-                		}
-					} else {
-						std::cout << "No ha habido cambios en el archivo. Saliendo sin guardar..." << std::endl << std::endl;
-					}
-				} else {
-					for (int i=0; i<indexer; i++) {
-	                    newFile << std::to_string(num[i]) << std::endl;
-                	}
-				}
-				file.close();
-                exit = 1;
+				for (int i=0; i<indexer; i++) {
+                    newFile << std::to_string(num[i]) << std::endl;
+            	}
+            	newFile.close();
+                quit = 1;
                 break;
             default:
                 std::cout << "No se ha introducido una de las opciones ofrecidas." << std::endl << std::endl;
