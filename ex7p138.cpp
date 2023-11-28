@@ -18,7 +18,7 @@ int main() {
     std::cout << std::endl;
     std::ofstream newFile(filename);
     std::ifstream file(filename.c_str());
-    if (!file.fail()) {
+    if (file.fail()) {
         while (!file.eof()) {
             std::getline(file, line);
             if (!file.eof()) {
