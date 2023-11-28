@@ -21,8 +21,8 @@ int main() {
             std::getline(file, line);
             if (!file.eof()) {
                 num[indexer] = std::stod(line);
+                indexer++;
             }
-            indexer++;
         }
         file.close();
     }
