@@ -15,6 +15,7 @@ int main() {
     // Asking for filename and adding current numbers if file exists
     std::cout << std::endl << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
     std::getline(std::cin, filename);
+    std::cout << std::endl;
     std::ofstream newFile(filename);
     std::ifstream file(filename.c_str());
     if (!file.fail()) {
