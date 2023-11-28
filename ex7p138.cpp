@@ -13,7 +13,7 @@ int main() {
     }
 
     // Asking for filename and adding current numbers if file exists
-    std::cout << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
+    std::cout << std::endl << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
     std::getline(std::cin, filename);
     std::ofstream newFile(filename);
     std::ifstream file(filename.c_str());
@@ -25,8 +25,8 @@ int main() {
             }
             indexer++;
         }
-        file.close();
     }
+    file.close();
 
     // Menu
     while (quit != 1) {
