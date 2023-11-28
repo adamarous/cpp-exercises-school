@@ -55,15 +55,20 @@ int main() {
             case 2:
                 if (indexer != 0) {
                     for (int i=0; i<indexer; i++) {
-                        if (i == 0 && indexer > 1) {
-                            std::cout << num[i] << ", ";
+                        if (i == indexer-1) {
+                            std::cout << num[i] << "." << std::endl;
                         } else {
-                            if (i == indexer-1) {
-                                std::cout << num[i] << "." << std::endl;
-                            } else {
-                                std::cout << num[i] << " ";
-                            }
+                            std::cout << num[i] << ", ";
                         }
+                        // if (i == 0 && indexer > 1) {
+                        //     std::cout << num[i] << ", ";
+                        // } else {
+                        //     if (i == indexer-1) {
+                        //         std::cout << num[i] << "." << std::endl;
+                        //     } else {
+                        //         std::cout << num[i] << " ";
+                        //     }
+                        // }
                     }
                     std::cout << std::endl;
                 } else {
