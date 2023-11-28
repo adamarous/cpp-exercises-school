@@ -4,22 +4,32 @@
 
 int main() {
     double num[1000], n, average = 0.0;
-    int indexer = 0, exit = 0, option, number, newFileOption = 0;
+    int indexer = 0, exit = 0, option, newFileOption = 0, originalFileContents = 0;
     std::ofstream newFile("numeros.txt");
-    std::string filename;
+    std::string filename, line;
 
     // Populating the array with 0 to avoid memory errors
     for (int i=0; i<1000; i++) {
         num[i] = 0;
     }
 
-    // Asking for filename or setting workspace option for newfile operations
+    // Asking for filename and adding current numbers if file exists
     std::cout << "Introduzca un nombre para el archivo de destino o el nombre del archivo existente: ";
-    getline(cin, filename);
+    std::getline(std::cin, filename);
     std::ifstream file(filename.c_str);
-    if (file.fail()) {
-        newFileOption = 1;
-    }
+    if (!file.fail()) {
+        while (!file.eof()) {
+            std::getline(file, line);
+            if (!file.eof()) {
+                num[indexer] = std::stoi(line);
+            }
+            indexer++;
+            originalFileContents++;
+        }
+        file.close();
+    } else {
+    	newFileOption = 1;
+	}
 
     // Menu
     while (exit != 1) {
@@ -33,29 +43,18 @@ int main() {
         std::cin >> option;
         std::cout << std::endl;
         switch (option) {
-            case 1: // Pending work for existing file inputs
+            case 1:
                 if (indexer < 1000) {
-                    if (newFileOption != 1) {
-                        while (!newFile.eof()) {
-                            getline(newFile, line);
-                            if (!newFile.eof()) {
-                                num[indexer] = std::stoi(line);
-                            }
-                            indexer++;
-                        }
-                        newFile.close();
-                    }
                     std::cout << "Introduzca un dato real de doble precision: ";
                     std::cin >> n;
                     std::cout << std::endl;
-
                     num[indexer] = n;
                     indexer++;
                 } else {
                     std::cout << "No hay espacio para mas valores." << std::endl << std::endl;
                 }
                 break;
-            case 2: // Pending work for file data input
+            case 2:
                 if (indexer != 0) {
                     for (int i=0; i<indexer; i++) {
                         if (i == 0 && indexer > 1) {
@@ -89,13 +88,24 @@ int main() {
                 }
                 std::cout << std::endl;
                 break;
-            case 0: // Pending work for separating workflow depending on whether there's an input or onyl an output file
-                for (int i=0; i<indexer; i++) {
-                    if (!file.eof()) {
-                        getline(file, line);
-                        line = std::to_string(num[i]);
-                    }
-                }
+            case 0:
+				if (newFileOption == 0) {
+                	while (!file.eof()) {
+                		std::getline(file, line);
+					}
+					if (originalFileContents != indexer) {
+						for (int i=(originalFileContents-1); i<indexer; i++) {
+	                    	file << std::to_string(num[i]) << std::endl;
+                		}
+					} else {
+						std::cout << "No ha habido cambios en el archivo. Saliendo sin guardar..." << std::endl << std::endl;
+					}
+				} else {
+					for (int i=0; i<indexer; i++) {
+	                    newFile << std::to_string(num[i]) << std::endl;
+                	}
+				}
+				file.close();
                 exit = 1;
                 break;
             default:
