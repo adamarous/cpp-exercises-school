@@ -19,10 +19,9 @@ int main() {
     if (!file.fail()) {
         while (!file.eof()) {
             std::getline(file, line);
-            num[indexer] = std::stod(line);
-            // if (!file.eof()) {
-            //     num[indexer] = std::stod(line);
-            // }
+            if (!file.eof()) {
+                num[indexer] = std::stod(line);
+            }
             indexer++;
         }
         file.close();
