@@ -20,7 +20,7 @@ int main() {
         while (!file.eof()) {
             std::getline(file, line);
             if (!file.eof()) {
-                num[indexer] = std::stoi(line);
+                num[indexer] = std::stod(line);
             }
             indexer++;
         }
