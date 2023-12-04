@@ -3,14 +3,8 @@
 void ObtenerMaximo(int n, int a[]) {
     int greatest = 0;
     for (int i=0; i<n; i++) {
-        if (i == 0) {
-            if (a[i] > a[i+1]) {
-                greatest = a[i];
-            }
-        } else {
-            if (a[i] > a[i+1] && a[i] > greatest) {
-                greatest = a[i];
-            }
+        if (a[i] > greatest) {
+            greatest = a[i];
         }
     }
     std::cout << greatest;
@@ -34,7 +28,7 @@ int main() {
 
     std::cout << std::endl << "El valor mayor entre los introducidos es: ";
     ObtenerMaximo(data, array);
-    std::cout << ".";
+    std::cout << "." << std::endl;
 
     return 0;
 }
