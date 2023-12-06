@@ -78,7 +78,7 @@ int main() {
                 std::cout << std::endl;
                 break;
             case 0:
-		for (int i=0; i<indexer; i++) {
+                for (int i=0; i<indexer; i++) {
                     newFile << std::to_string(num[i]) << std::endl;
             	}
             	newFile.close();
