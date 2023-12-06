@@ -1,3 +1,4 @@
+// This exercise is unfinished and will prolly remain unfinished for the time being
 #include <iostream>
 #include <cmath>
 
