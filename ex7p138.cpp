@@ -86,6 +86,7 @@ int main() {
                 break;
             default:
                 std::cout << "No se ha introducido una de las opciones ofrecidas." << std::endl << std::endl;
+		break;
         }
     }
 
